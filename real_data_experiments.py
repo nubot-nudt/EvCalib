@@ -128,8 +128,10 @@ class CalibrationModel:
     gt = sR.from_euler('zyx', [0, 0, 90], degrees=True).as_matrix()
     return np.arccos((np.trace(model@gt)-1)/2)*180/np.pi
 
-''' test function '''
 
+
+
+''' test function '''
 def re_calib_result(data_file, msg):
   calib_model = CalibrationModel()
   calib_data = np.load(data_file)
@@ -141,29 +143,6 @@ def re_calib_result(data_file, msg):
   print('===== ',msg,' =====')
   print('R_euler: ', R_euler)
   print('error: ', calib_model.error(R))
-  print('---\n')
-  
-def re_cca_result(data_file, msg):
-  calib_model = CalibrationModel()
-  calib_data = np.load(data_file)
-  calib_data = calib_data['best_set']
-  ve = calib_data[:,0:4]
-  vo = calib_data[:,4:8]
-  ve = ve[np.argsort(ve[:,3])]
-  vo = vo[np.argsort(vo[:,3])]
-  de = np.diff(ve[:,3])
-  do = np.diff(vo[:,3])
-  ve = ve[1:][(de > 0.) == 1]
-  vo = vo[1:][(do > 0.) == 1]
-  best_guess, R_cca, vo_shifted, max_cor = find_time_shift(ve[:,0:3], ve[:,3], vo[:,0:3], vo[:,3], 1) # -1000ms - 1000ms
-  print('===== ',msg,' =====')
-  print('best_guess: ', best_guess)
-  print('max_cor: ', max_cor)
-  R_shifted = calib_R(ve[:,0:3], vo_shifted[:,0:3])
-  R_euler = sR.from_matrix(R_shifted.T).as_euler('zyx', degrees=True)
-  print('R_unshift: ', R_euler)
-  print('unshift_error: ', calib_model.error(R_shifted))
-  
   print('---\n')
 
 def re_bundle_rotation_result(data_file, msg):
@@ -212,17 +191,11 @@ calib_files = ["data/calib_data_time_2traj.npz",
               "data/calib_data_time_4traj.npz",
               "data/calib_data_time_5traj.npz"]
 
-# VC-1
+# VC-W/O
 re_calib_result(calib_files[0], 'vc1_traj_2')
 re_calib_result(calib_files[1], 'vc1_traj_3')
 re_calib_result(calib_files[2], 'vc1_traj_4')
 re_calib_result(calib_files[3], 'vc1_traj_5')
-
-# VC-2
-re_cca_result(calib_files[0], 'vc2_traj_2')
-re_cca_result(calib_files[1], 'vc2_traj_3')
-re_cca_result(calib_files[2], 'vc2_traj_4')
-re_cca_result(calib_files[3], 'vc2_traj_5')
 
 # bundle estimation
 # re_bundle_rotation_result(calib_files[0], 'bundle_est_traj2')
