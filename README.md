@@ -1,5 +1,7 @@
 # Velocity-Correlation-Calibration
 
+We have made the spatial-temporal calibration section of the paper available as open-source, along with a simple example to aid the reader in comprehending the concept of CCA. Furthermore, we have shared code for conducting real-world data experiments, which can be utilized to accomplish calibration tasks in practical scenarios.
+
 ## 1. Prerequisites
 
 - numpy==1.21.2
@@ -24,12 +26,20 @@ pip3 install -r requirements.txt
   python3 real_data_experiments.py
   ```
 
+  In real data, our data format is as follows:
   
+  ```
+  vel_x, vel_y, vel_z, timestamp
+  ```
+  
+  Note: The real velocity data we provide has been preliminarily time-aligned using brute force search methods.
 
 
 ## 3. Citation
 
-If our work inspires your research or some part of the codes are useful for your work, please cite our paper: XXX
+If our work inspires your research or some part of the codes are useful for your work, please cite our paper: [Spatio-Temporal Calibration for Omni-Directional Vehicle-Mounted](https://arxiv.org/abs/2307.06810)
+
+
 
 ## 4. Contact
 
