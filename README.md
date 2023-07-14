@@ -1,6 +1,6 @@
 # Velocity-Correlation-Calibration
 
-We have made the spatial-temporal calibration section of the paper available as open-source, along with a simple example to aid the reader in comprehending the concept of CCA. Furthermore, we have shared code for conducting real-world data experiments, which can be utilized to accomplish calibration tasks in practical scenarios.
+We have made the spatial-temporal calibration section of the paper available as open-source, along with a simple example to aid the reader in comprehending the concept of CCA. Furthermore, we have shared code for conducting real-world data experiments.
 
 ## 1. Prerequisites
 
