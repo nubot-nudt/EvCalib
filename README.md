@@ -1,9 +1,5 @@
 # Velocity-Correlation-Calibration
 
-![evcalib_temporal_offset_traj_arc](img/evcalib_temporal_offset_traj_arc.png)
-
-![evcalib_temporal_offset_traj_polyline](img/evcalib_temporal_offset_traj_polyline.png)
-
 ## 1. Prerequisites
 
 - numpy==1.21.2
