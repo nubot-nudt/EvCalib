@@ -40,6 +40,19 @@ pip3 install -r requirements.txt
 If our work inspires your research or some part of the codes are useful for your work, please cite our paper: [Spatio-Temporal Calibration for Omni-Directional Vehicle-Mounted Event Cameras](https://arxiv.org/abs/2307.06810)
 
 
+```latex
+@ARTICLE{10404026,
+  author={Li, Xiao and Zhou, Yi and Guo, Ruibin and Peng, Xin and Zhou, Zongtan and Lu, Huimin},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Spatio-Temporal Calibration for Omni-Directional Vehicle-Mounted Event Cameras}, 
+  year={2024},
+  volume={9},
+  number={3},
+  pages={2311-2318},
+  keywords={Calibration;Cameras;Correlation;Trajectory;Sensors;Robot vision systems;Task analysis;Calibration and identification;SLAM;event-based vision},
+  doi={10.1109/LRA.2024.3355765}}
+```
+
 
 ## 4. Contact
 
